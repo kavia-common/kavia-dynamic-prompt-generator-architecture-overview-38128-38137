@@ -1,0 +1,39 @@
+.fade-enter {
+  opacity: 0.01;
+  transform: translateY(8px);
+}
+.fade-enter-active {
+  opacity: 1;
+  transform: translateY(0px);
+  transition: opacity 200ms ease, transform 200ms ease;
+}
+.fade-exit {
+  opacity: 1;
+}
+.fade-exit-active {
+  opacity: 0.01;
+  transform: translateY(-8px);
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.slide-h {
+  will-change: transform, opacity;
+  animation: slideInH 260ms cubic-bezier(.2,.7,.2,1);
+}
+
+@keyframes slideInH {
+  from { opacity: .001; transform: translateX(12px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-enter,
+  .fade-enter-active,
+  .fade-exit,
+  .fade-exit-active,
+  .slide-h {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
+}

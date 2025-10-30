@@ -1,82 +1,49 @@
-# Lightweight React Template for KAVIA
+# Slides Frontend — Dynamic Prompt Generator Architecture
 
-This project provides a minimal React template with a clean, modern UI and minimal dependencies.
+Ocean Professional themed React app to present the architecture slides for Kavia’s Dynamic Prompt Generator.
+
+## Quickstart
+
+- Install: `npm install`
+- Start dev server: `npm start` (http://localhost:3000)
+- Build: `npm run build`
+- Test: `npm test`
 
 ## Features
 
-- **Lightweight**: No heavy UI frameworks - uses only vanilla CSS and React
-- **Modern UI**: Clean, responsive design with KAVIA brand styling
-- **Fast**: Minimal dependencies for quick loading times
-- **Simple**: Easy to understand and modify
+- Central 16:9 slide viewer with modern, minimal UI
+- Ocean Professional theme (blue primary, amber accents)
+- Keyboard navigation: ← → Space (Shift+Space prev) Home End
+- Help overlay: press `?` (close with `Esc`)
+- Theme toggle and subtle Retro build badge
+- Responsive layout with thumbnail strip hidden on small screens
+- Reduced motion support (prefers-reduced-motion)
+- Dev-only Env panel (header “Env” button)
 
-## Getting Started
+## Environment variables
 
-In the project directory, you can run:
+The app reads the following REACT_APP_* variables via `src/utils/env.js`:
 
-### `npm start`
+- REACT_APP_API_BASE, REACT_APP_BACKEND_URL, REACT_APP_FRONTEND_URL, REACT_APP_WS_URL
+- REACT_APP_NODE_ENV, REACT_APP_NEXT_TELEMETRY_DISABLED, REACT_APP_ENABLE_SOURCE_MAPS
+- REACT_APP_PORT, REACT_APP_TRUST_PROXY, REACT_APP_LOG_LEVEL, REACT_APP_HEALTHCHECK_PATH
+- REACT_APP_FEATURE_FLAGS, REACT_APP_EXPERIMENTS_ENABLED
 
-Runs the app in development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Create a `.env` file (do not commit secrets). See `.env.example` in the project root if provided. In development, click “Env” in header to inspect current values.
 
-### `npm test`
+## Structure
 
-Launches the test runner in interactive watch mode.
+- src/styles/tokens.css — theme tokens (colors, radius, shadows, gradient)
+- src/utils/animations.css — fade/slide animations with reduced-motion support
+- src/theme.js — theme init/toggle helpers
+- src/hooks/ — custom hooks (keyboard, reduced motion)
+- src/components/ — viewer, navigator, header, progress, thumbnails, etc.
+- src/data/slides.js — seeded architecture slides
+- public/manifest.json — theme colors align to tokens
 
-### `npm run build`
+## Accessibility
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Focus-visible rings, aria-labels, live regions for progress, modal semantics
+- Keyboard shortcuts [?, Esc] for help modal
 
-## Customization
-
-### Colors
-
-The main brand colors are defined as CSS variables in `src/App.css`:
-
-```css
-:root {
-  --kavia-orange: #E87A41;
-  --kavia-dark: #1A1A1A;
-  --text-color: #ffffff;
-  --text-secondary: rgba(255, 255, 255, 0.7);
-  --border-color: rgba(255, 255, 255, 0.1);
-}
-```
-
-### Components
-
-This template uses pure HTML/CSS components instead of a UI framework. You can find component styles in `src/App.css`. 
-
-Common components include:
-- Buttons (`.btn`, `.btn-large`)
-- Container (`.container`)
-- Navigation (`.navbar`)
-- Typography (`.title`, `.subtitle`, `.description`)
-
-## Learn More
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+More documentation will be added in step 2.

@@ -1,0 +1,55 @@
+:root {
+  /* Ocean Professional palette */
+  --color-primary: #2563EB; /* blue-600 */
+  --color-primary-500: #3B82F6;
+  --color-primary-400: #60A5FA;
+  --color-secondary: #F59E0B; /* amber-500 */
+  --color-secondary-600: #D97706;
+  --color-error: #EF4444;
+  --color-surface: #ffffff;
+  --color-background: #f9fafb;
+  --color-text: #111827;
+  --color-text-muted: #6B7280;
+  --color-border: #E5E7EB;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.06);
+  --shadow-md: 0 6px 20px rgba(0,0,0,0.08);
+  --shadow-lg: 0 14px 28px rgba(0,0,0,0.12);
+
+  --gradient-surface: linear-gradient(180deg, rgba(59,130,246,0.08), rgba(249,250,251,1) 30%);
+
+  --focus-ring: 0 0 0 3px rgba(37, 99, 235, 0.35);
+
+  /* Slide sizing */
+  --slide-ratio-w: 16;
+  --slide-ratio-h: 9;
+
+  /* Component tokens */
+  --btn-bg: var(--color-primary);
+  --btn-bg-hover: #1D4ED8;
+  --btn-text: #ffffff;
+
+  --badge-bg: rgba(37, 99, 235, 0.08);
+  --badge-border: rgba(37, 99, 235, 0.25);
+}
+
+[data-theme="dark"] {
+  --color-surface: #0f172a;
+  --color-background: #0b1220;
+  --color-text: #f9fafb;
+  --color-text-muted: #c1c7d1;
+  --color-border: #1f2a44;
+
+  --gradient-surface: linear-gradient(180deg, rgba(37,99,235,0.15), rgba(15,23,42,1) 35%);
+
+  --btn-bg: var(--color-primary-500);
+  --btn-bg-hover: #2563EB;
+  --btn-text: #eaf2ff;
+
+  --badge-bg: rgba(37, 99, 235, 0.15);
+  --badge-border: rgba(96, 165, 250, 0.25);
+}
