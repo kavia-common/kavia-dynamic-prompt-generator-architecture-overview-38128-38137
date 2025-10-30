@@ -3,7 +3,7 @@ const defaultEnv = {
   REACT_APP_BACKEND_URL: '',
   REACT_APP_FRONTEND_URL: '',
   REACT_APP_WS_URL: '',
-  REACT_APP_NODE_ENV: process?.env?.NODE_ENV || 'development',
+  REACT_APP_NODE_ENV: (typeof process !== 'undefined' && process.env && process.env.NODE_ENV) ? process.env.NODE_ENV : 'development',
   REACT_APP_NEXT_TELEMETRY_DISABLED: '1',
   REACT_APP_ENABLE_SOURCE_MAPS: 'true',
   REACT_APP_PORT: '3000',

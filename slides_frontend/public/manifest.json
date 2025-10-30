@@ -1,6 +1,6 @@
 {
-  "short_name": "Kavia Slides",
-  "name": "Kavia Dynamic Prompt Generator — Architecture Slides",
+  "short_name": "KaviaSlides",
+  "name": "Kavia Slides — Dynamic Prompt Generator",
   "icons": [],
   "start_url": ".",
   "display": "standalone",
